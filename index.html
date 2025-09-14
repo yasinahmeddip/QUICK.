@@ -7,109 +7,161 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Ubuntu&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">    
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>QUICK.</title>
-</head>
+    <style>
+        /* Smooth anchor scroll */
+        html { scroll-behavior: smooth; }
+    </style>
+    </head>
 <body>
-    
-<div class="header">
+
+<!-- Header / Sticky Navbar -->
+<header class="header" id="top">
     <div class="container">
-        <div class="nav">
-            <div class="logo">
-                <img src="img/img.jpg">
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="">Overviews</a></li>
-                    <li><a href="">Landings</a></li>
-                    <li><a href="">pages</a></li>
-                    <li><a href="">App</a></li>
-                    <li><a href="">Docs</a></li>
-                </ul>
-            </div>
-        </div>
+        <nav class="nav" aria-label="Primary">
+            <a class="logo" href="#top" aria-label="Home">
+                <img src="img/img.jpg" alt="QUICK. logo">
+            </a>
+
+            <ul class="menu">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#landings">Landings</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </div>
-</div>
-<div class="banner">
+    <div class="header__shadow" aria-hidden="true"></div>
+</header>
+
+<!-- Hero / Overview -->
+<div class="banner" id="overview">
     <div class="container">
         <div class="banner-text">
             <div class="top">
                 <h1>It's time to amplify you <br>
-                     <span>online business</span> </h1>
+                    <span>online business</span> </h1>
                     <p>Lorem ipsum amet consectetur adipisicing elit. Quo esse quibusdam natus vero Laudantium, veritatis.<br>
-                     facere quae error non, reiciendis vitae commodi, doloremque .
+                    facere quae error non, reiciendis vitae commodi, doloremque.
                 </p>
-                
+                <div class="cta">
+                    <a class="btn btn--primary" href="#features">Get Started</a>
+                    <a class="btn btn--outline" href="#contact">Contact Us</a>
+                </div>
             </div>
             <div class="bottom">
-                <img src="img/image.jpg">
+                <img src="img/image.jpg" alt="Banner image">
             </div>
         </div>
 
     </div>
 </div>
-<div class="content-area">
+
+<!-- Landings / Stats -->
+<div class="content-area" id="landings">
     <div class="container">
-       <div class="content">
-           <div class="left">
-               <h2>3k+</h2>
-               <p>Lorem ipsum dolor sit amet consectetur elit. <br>
+        <div class="content">
+            <div class="left">
+                <h2>3k+</h2>
+                <p>Lorem ipsum dolor sit amet consectetur elit. <br>
                 Labore, libero eum expedita et quos officia <br>
-                 nostrum.</p>
-           </div>
-           <div class="right">
-               <h3>
-             Successfully <br>
+                nostrum.</p>
+            </div>
+            <div class="right">
+                <h3>
+                Successfully <br>
                 completed <br>
                 projects & ideas
-               </h3>
-        </div>
-       </div> 
+                </h3>
+            </div>
+        </div> 
     </div>
 </div>
 
-<div class="gellary-area">
+<!-- Features (Cards) -->
+<div class="gellary-area" id="features">
     <div class="container">
         <div class="gellary">
-            <div class="image1">
+            <div class="image1 card">
                 <img src="img/image1.jpg" alt="">
                 <h2>Unleash your creativity</h2>
                 <p>Lorem ipsum dolor, sit amet <br>
                     consectetur adipisicing elit. Dolor,<br>
-                     exercitationem quia.</p>
+                    exercitationem quia.</p>
+                <a class="btn btn--ghost" href="#pages">Learn more</a>
             </div>
-            <div class="image2">
+            <div class="image2 card">
                 <img src="img/image2.jpg" alt="">
                 <h2>Unleash your creativity</h2>
                 <p>Lorem ipsum dolor, sit amet <br>
                     consectetur adipisicing elit. Dolor,<br>
-                     exercitationem quia.</p>
+                    exercitationem quia.</p>
+                <a class="btn btn--lift" href="#app">See demo</a>
             </div>
-            <div class="image3">
+            <div class="image3 card">
                 <img src="img/image3.jpg" alt="">
                 <h2>Unleash your creativity</h2>
                 <p>Lorem ipsum dolor, sit amet <br>
                     consectetur adipisicing elit. Dolor,<br>
-                     exercitationem quia.</p>
+                    exercitationem quia.</p>
+                <a class="btn btn--gradient" href="#contact">Try now</a>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Removed Pages, App, and Documentation sections as requested -->
+
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <h2 class="section__title">What our users say</h2>
+        <div class="testimonials__grid">
+            <article class="testimonial card">
+                <img class="avatar" src="img/image1.jpg" alt="User avatar">
+                <blockquote>“QUICK. helped us launch 2x faster with a clean UI.”</blockquote>
+                <div class="author">Rafi Khan, Product Lead</div>
+            </article>
+            <article class="testimonial card">
+                <img class="avatar" src="img/image2.jpg" alt="User avatar">
+                <blockquote>“Responsive out of the box. Our mobile metrics improved.”</blockquote>
+                <div class="author">Sumaiya Akter, Growth</div>
+            </article>
+            <article class="testimonial card">
+                <img class="avatar" src="img/image3.jpg" alt="User avatar">
+                <blockquote>“Love the small details: hover states and cards feel great.”</blockquote>
+                <div class="author">Arif Hossain, Designer</div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Contact / Footer CTA -->
+<section class="section section--contact" id="contact">
+    <div class="container">
+        <h2 class="section__title">Ready to build?</h2>
+        <p class="section__lead">Say hello and we’ll get back within 24h.</p>
+        <div class="btn-row">
+            <a class="btn btn--primary" href="#">Contact Sales</a>
+            <a class="btn btn--outline" href="#">Support</a>
+        </div>
+    </div>
+</section>
+
 <div class="fotter-text">
     <div class="container">
-    <div class="fotter"><p>© Copyright by <span>LEDP SHERPUR.</span>  ALl right Reserved 2021</p></div>
-</div>
-</div>
+        <div class="fotter"><p>© Copyright by <span>LEDP SHERPUR.</span> All rights reserved 2021</p></div>
+    </div>
+    </div>
 </body>
 </html>
