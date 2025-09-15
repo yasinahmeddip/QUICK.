@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,154 +15,172 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>QUICK.</title>
     <style>
         /* Smooth anchor scroll */
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
-    </head>
+</head>
+
 <body>
 
-<!-- Header / Sticky Navbar -->
-<header class="header" id="top">
-    <div class="container">
-        <nav class="nav" aria-label="Primary">
-            <a class="logo" href="#top" aria-label="Home">
-                <img src="img/img.jpg" alt="QUICK. logo">
-            </a>
+    <!-- Header / Sticky Navbar *** start from here -->
+    <header class="header" id="top">
+        <div class="container">
+            <nav class="nav" aria-label="Primary">
+                <a class="logo" href="#top" aria-label="Home">
+                    <img src="img/img.jpg" alt="QUICK. logo">
+                </a>
+                
+                <ul class="menu">
+                    <li><a href="#landings">Landings</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li class="hide-on-mobile"><a href="#overview">Overview</a></li>
+                    <li class="hide-on-mobile"><a href="#testimonials">Testimonials</a></li>
+                    <li><a class="btn btn--primary" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header__shadow" aria-hidden="true"></div>
+    </header>
+    <!-- Header / Sticky Navbar *** end from here -->
 
-            <ul class="menu">
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#landings">Landings</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="header__shadow" aria-hidden="true"></div>
-</header>
-
-<!-- Hero / Overview -->
-<div class="banner" id="overview">
-    <div class="container">
-        <div class="banner-text">
-            <div class="top">
-                <h1>It's time to amplify you <br>
-                    <span>online business</span> </h1>
-                    <p>Lorem ipsum amet consectetur adipisicing elit. Quo esse quibusdam natus vero Laudantium, veritatis.<br>
-                    facere quae error non, reiciendis vitae commodi, doloremque.
-                </p>
-                <div class="cta">
-                    <a class="btn btn--primary" href="#features">Get Started</a>
-                    <a class="btn btn--outline" href="#contact">Contact Us</a>
+    <!-- Banner / Overview (Hero) *** start from here -->
+    <div class="banner" id="overview">
+        <div class="container">
+            <div class="banner-text">
+                <div class="top">
+                    <h1>It's time to amplify you <br>
+                        <span>online business</span>
+                    </h1>
+                    <p class="hero-copy clamp-3">
+                        Lorem ipsum amet consectetur adipisicing elit. Quo esse quibusdam natus vero Laudantium, veritatis. facere quae error non, reiciendis vitae commodi, doloremque.
+                    </p>
+                    <div class="cta">
+                        <a class="btn btn--primary" href="#features">Get Started</a>
+                        <a class="btn btn--outline" href="#contact">Contact Us</a>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <img src="img/image.jpg" alt="Banner image">
                 </div>
             </div>
-            <div class="bottom">
-                <img src="img/image.jpg" alt="Banner image">
-            </div>
+
         </div>
-
     </div>
-</div>
+    <!-- Banner / Overview (Hero) *** end from here -->
 
-<!-- Landings / Stats -->
-<div class="content-area" id="landings">
-    <div class="container">
-        <div class="content">
-            <div class="left">
-                <h2>3k+</h2>
-                <p>Lorem ipsum dolor sit amet consectetur elit. <br>
-                Labore, libero eum expedita et quos officia <br>
-                nostrum.</p>
-            </div>
-            <div class="right">
-                <h3>
-                Successfully <br>
-                completed <br>
-                projects & ideas
-                </h3>
-            </div>
-        </div> 
-    </div>
-</div>
-
-<!-- Features (Cards) -->
-<div class="gellary-area" id="features">
-    <div class="container">
-        <div class="gellary">
-            <div class="image1 card">
-                <img src="img/image1.jpg" alt="">
-                <h2>Unleash your creativity</h2>
-                <p>Lorem ipsum dolor, sit amet <br>
-                    consectetur adipisicing elit. Dolor,<br>
-                    exercitationem quia.</p>
-                <a class="btn btn--ghost" href="#pages">Learn more</a>
-            </div>
-            <div class="image2 card">
-                <img src="img/image2.jpg" alt="">
-                <h2>Unleash your creativity</h2>
-                <p>Lorem ipsum dolor, sit amet <br>
-                    consectetur adipisicing elit. Dolor,<br>
-                    exercitationem quia.</p>
-                <a class="btn btn--lift" href="#app">See demo</a>
-            </div>
-            <div class="image3 card">
-                <img src="img/image3.jpg" alt="">
-                <h2>Unleash your creativity</h2>
-                <p>Lorem ipsum dolor, sit amet <br>
-                    consectetur adipisicing elit. Dolor,<br>
-                    exercitationem quia.</p>
-                <a class="btn btn--gradient" href="#contact">Try now</a>
+    <!-- Landings / Stats *** start from here -->
+    <div class="content-area" id="landings">
+        <div class="container">
+            <div class="content">
+                <div class="left">
+                    <h2>3k+</h2>
+                    <p class="clamp-3">Lorem ipsum dolor sit amet consectetur elit. <br>
+                        Labore, libero eum expedita et quos officia <br>
+                        nostrum.</p>
+                </div>
+                <div class="right">
+                    <h3>
+                        Successfully <br>
+                        completed <br>
+                        projects & ideas
+                    </h3>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <!-- Landings / Stats *** end from here -->
 
-<!-- Removed Pages, App, and Documentation sections as requested -->
-
-<!-- Testimonials -->
-<section class="testimonials" id="testimonials">
-    <div class="container">
-        <h2 class="section__title">What our users say</h2>
-        <div class="testimonials__grid">
-            <article class="testimonial card">
-                <img class="avatar" src="img/image1.jpg" alt="User avatar">
-                <blockquote>“QUICK. helped us launch 2x faster with a clean UI.”</blockquote>
-                <div class="author">Rafi Khan, Product Lead</div>
-            </article>
-            <article class="testimonial card">
-                <img class="avatar" src="img/image2.jpg" alt="User avatar">
-                <blockquote>“Responsive out of the box. Our mobile metrics improved.”</blockquote>
-                <div class="author">Sumaiya Akter, Growth</div>
-            </article>
-            <article class="testimonial card">
-                <img class="avatar" src="img/image3.jpg" alt="User avatar">
-                <blockquote>“Love the small details: hover states and cards feel great.”</blockquote>
-                <div class="author">Arif Hossain, Designer</div>
-            </article>
+    <!-- Features (Cards) *** start from here -->
+    <div class="gellary-area" id="features">
+        <div class="container">
+            <div class="gellary">
+                <div class="image1 card">
+                    <img src="img/image1.jpg" alt="">
+                    <h2>Unleash your creativity</h2>
+                    <p>Lorem ipsum dolor, sit amet <br>
+                        consectetur adipisicing elit. Dolor,<br>
+                        exercitationem quia.</p>
+                    <a class="btn btn--ghost" href="#pages">Learn more</a>
+                </div>
+                <div class="image2 card">
+                    <img src="img/image2.jpg" alt="">
+                    <h2>Unleash your creativity</h2>
+                    <p>Lorem ipsum dolor, sit amet <br>
+                        consectetur adipisicing elit. Dolor,<br>
+                        exercitationem quia.</p>
+                    <a class="btn btn--lift" href="#app">See demo</a>
+                </div>
+                <div class="image3 card">
+                    <img src="img/image3.jpg" alt="">
+                    <h2>Unleash your creativity</h2>
+                    <p>Lorem ipsum dolor, sit amet <br>
+                        consectetur adipisicing elit. Dolor,<br>
+                        exercitationem quia.</p>
+                    <a class="btn btn--gradient" href="#contact">Try now</a>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+    <!-- Features (Cards) *** end from here -->
 
-<!-- Contact / Footer CTA -->
-<section class="section section--contact" id="contact">
-    <div class="container">
-        <h2 class="section__title">Ready to build?</h2>
-        <p class="section__lead">Say hello and we’ll get back within 24h.</p>
-        <div class="btn-row">
-            <a class="btn btn--primary" href="#">Contact Sales</a>
-            <a class="btn btn--outline" href="#">Support</a>
+    <!-- Removed Pages, App, and Documentation sections as requested -->
+
+    <!-- Testimonials *** start from here -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section__title">What our users say</h2>
+            <div class="testimonials__grid">
+                <article class="testimonial card">
+                    <img class="avatar" src="img/image1.jpg" alt="User avatar">
+                    <blockquote>“QUICK. helped us launch 2x faster with a clean UI.”</blockquote>
+                    <div class="author">Rafi Khan, Product Lead</div>
+                </article>
+                <article class="testimonial card">
+                    <img class="avatar" src="img/image2.jpg" alt="User avatar">
+                    <blockquote>“Responsive out of the box. Our mobile metrics improved.”</blockquote>
+                    <div class="author">Sumaiya Akter, Growth</div>
+                </article>
+                <article class="testimonial card">
+                    <img class="avatar" src="img/image3.jpg" alt="User avatar">
+                    <blockquote>“Love the small details: hover states and cards feel great.”</blockquote>
+                    <div class="author">Arif Hossain, Designer</div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials *** end from here -->
+
+    <!-- Contact / Footer CTA *** start from here -->
+    <section class="section section--contact" id="contact">
+        <div class="container">
+            <h2 class="section__title">Ready to build?</h2>
+            <p class="section__lead">Say hello and we’ll get back within 24h.</p>
+            <div class="btn-row">
+                <a class="btn btn--primary" href="#">Contact Sales</a>
+                <a class="btn btn--outline" href="#">Support</a>
+            </div>
+        </div>
+    </section>
+    <!-- Contact / Footer CTA *** end from here -->
+
+    <!-- Footer *** start from here -->
+    <div class="fotter-text">
+        <div class="container">
+            <div class="fotter">
+                <p>© Copyright by <span>EYASIN AHMED.</span> All rights reserved 2021</p>
+            </div>
         </div>
     </div>
-</section>
+    <!-- Footer *** end from here -->
 
-<div class="fotter-text">
-    <div class="container">
-        <div class="fotter"><p>© Copyright by <span>LEDP SHERPUR.</span> All rights reserved 2021</p></div>
-    </div>
-    </div>
+
 </body>
+
 </html>

@@ -1,8 +1,11 @@
+/* CSS START */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+html, body{ max-width: 100%; overflow-x: hidden; }
+img, svg{ max-width: 100%; height: auto; }
 body{
     color: #0F2656;
     font-family: 'Open Sans', sans-serif;
@@ -13,7 +16,7 @@ body{
     padding: 0 16px;
     margin: 0 auto;
 }
-/* Header / Navbar */
+/* CSS START: Header / Navbar */
 .header{
     position: sticky;
     top: 0;
@@ -47,17 +50,18 @@ body{
     margin-left: auto;
 }
 .menu li{ list-style: none; }
-.menu a{
+.hide-on-mobile{ display:inline-block; }
+.menu a:not(.btn){
     display: inline-block;
     text-decoration: none;
     text-transform: none;
-    color: #0F2656;
+    color: #000; /* navbar text black */
     font-weight: 600;
     padding: 6px 10px;
     font-size: 14px;
     border-radius: 6px;
 }
-.menu a:hover{ background: #f2f6fb; }
+.menu a:not(.btn):hover{ background: #f2f6fb; }
 .nav__more{ display: none; position: relative; }
 .more__label{ display: inline-block; padding: 8px 12px; border-radius: 6px; cursor: default; }
 .more__menu{
@@ -68,8 +72,9 @@ body{
 .more__menu li a:hover{ background:#f2f6fb; }
 .more__toggle{ display:none; }
 .more__toggle:checked + .more__label + .more__menu{ display:block; }
+/* CSS END: Header / Navbar */
 
-/* Banner */
+/* CSS START: Banner / Hero */
 .banner {
     width: 100%;
     padding: 10px 0 0;
@@ -98,10 +103,16 @@ text-align: center;
 }
 .bottom img{ max-width: 100%; height: auto; display: inline-block; }
 .top p {
-    margin-top: 10px;
+    margin-top: 12px; /* a little more space under the h1 */
+    padding: 6px 0;   /* balanced vertical breathing room */
     font-size: 15px;
+    line-height: 1.6;
     font-family: 'Ubuntu', sans-serif;
 }
+/* CSS END: Banner / Hero */
+/* Utility to clamp text to 3 lines without <br> */
+.clamp-3{ display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.hero-copy{ max-width: 60ch; }
 .content-area{
     width: 100%;
 }
@@ -175,7 +186,7 @@ font-family: 'Ubuntu', sans-serif;
 .testimonial .author{ color:#4a5b7d; font-weight: 600; }
 
 /* Buttons (distinct hover effects) */
-.btn{ display:inline-block; padding:10px 16px; border-radius:8px; text-decoration:none; font-weight:700; transition: all .2s ease; }
+.btn{ display:inline-flex; align-items:center; justify-content:center; text-align:center; padding:10px 16px; border-radius:8px; text-decoration:none; font-weight:700; transition: all .2s ease; }
 .btn-row{ display:flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .cta{ display:flex; gap:10px; margin-top: 14px; }
 
@@ -185,14 +196,28 @@ font-family: 'Ubuntu', sans-serif;
 .btn--outline{ border:2px solid #008aff; color:#008aff; background: transparent; }
 .btn--outline:hover{ background:#e6f3ff; }
 
-.btn--ghost{ background: transparent; color:#0F2656; }
-.btn--ghost:hover{ background: rgba(0,138,255,0.08); }
+.btn--ghost,
+.btn--lift,
+.btn--gradient{
+    background:#008aff; /* unified */
+    color:#fff;         /* unified */
+    border: none;
+}
 
-.btn--lift{ border:1px solid #e9eef5; color:#0F2656; background:#fff; box-shadow: 0 0 0 rgba(0,0,0,0); }
-.btn--lift:hover{ transform: translateY(-3px); box-shadow: 0 12px 30px rgba(15,38,86,.12); }
-
-.btn--gradient{ color:#fff; background: linear-gradient(135deg, #008aff, #6a5cff); }
-.btn--gradient:hover{ filter: saturate(1.2) brightness(1.02); transform: translateY(-1px); }
+/* distinct hovers */
+.btn--lift:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(0,138,255,.35);
+}
+.btn--gradient:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 0 3px rgba(0,138,255,.25);
+}
+.btn--ghost:hover{
+    transform: rotate(-1deg);
+    filter: brightness(1.05);
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.55);
+}
 
 .btn--underline{ color:#0F2656; background: transparent; position: relative; }
 .btn--underline::after{ content:""; position:absolute; left:10px; right:10px; bottom:6px; height:2px; background:#008aff; transform: scaleX(0); transform-origin:left; transition:transform .2s ease; }
@@ -219,26 +244,291 @@ font-weight: 700;
 
 /* Responsive */
 @media (max-width: 992px){
-    .banner-text{ grid-template-columns: 1fr; text-align: center; }
-    .top{ text-align: center; }
+    .banner-text{ grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .top{ text-align: center; margin-inline: auto; }
+    .top .cta{ justify-content: center; }
     .bottom{ text-align: center; }
     .content{ flex-direction: column; text-align: center; }
     .left, .right{ width: 100%; text-align: center; }
     .right h3{ padding-left: 0; }
     .gellary{ grid-template-columns: repeat(2,1fr); }
+    .gellary .card:nth-child(3){
+      grid-column: 1 / -1;
+      justify-self: center;
+      place-self: center;
+      width: calc(50% - 12px); /* same visual width as one column */
+    }
     .testimonials__grid{ grid-template-columns: repeat(2,1fr); }
     .image1, .image2, .image3{ text-align: center; }
     .cta, .btn-row{ justify-content: center; }
+    /* Hide desktop-only nav items on tablet and mobile */
+    .hide-on-mobile{ display:none; }
 }
 
 @media (max-width: 768px){
-    .nav{ flex-direction: row; align-items: center; justify-content: space-between; }
-    .menu{ position: static; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-end; width: auto; padding: 0; gap: 6px; margin-left: auto; }
-    .menu a{ font-size: 12.5px; padding: 4px 8px; }
-    .gellary{ grid-template-columns: 1fr; }
-    .testimonials__grid{ grid-template-columns: 1fr; }
+    .nav{ flex-direction: row; align-items: center; justify-content: space-between; gap: 8px; }
+    /* Keep logo and menu on one line; enable horizontal scroll if overflow */
+    .menu{ position: static; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-end; width: auto; padding: 0; gap: 4px 6px; margin-left: auto; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+    .menu a:not(.btn){ font-size: 12.5px; padding: 4px 8px; }
+    .btn-row, .cta{ gap: 8px; justify-content: center; }
+    .hide-on-mobile{ display:none; }
+    .gellary{ grid-template-columns: repeat(2,1fr); }
+    .testimonials__grid{ grid-template-columns: 1fr; justify-items: center; }
+    /* Center all content blocks on mobile */
+    .section__title, .section__lead{ text-align: center; }
+    .content, .left, .right{ text-align: center; align-items: center; }
+    .card, .testimonial{ text-align: center; }
 }
 
 @media (max-width: 576px){
     .bottom img{ width: 70%; }
+    .btn-row, .cta{ gap: 6px; }
+    .gellary{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 360px){
+    .container{ padding: 0 12px; }
+    .menu a:not(.btn){ font-size: 12px; padding: 3px 6px; }
+}
+
+/* Responsive typography requested */
+/* Default (desktop) */
+h1 { font-size: 48px; }
+p  { font-size: 18px; }
+
+/* Mobile screen (max-width: 576px) */
+@media (max-width: 576px){
+  h1 { font-size: 28px; }
+  p  { font-size: 14px; }
+}
+
+/* Very small screens (below 360px) */
+@media (max-width: 360px){
+  h1 { font-size: 24px; }
+  p  { font-size: 13px; }
+}
+
+/* Optional helpers if you use headline/para classes */
+@media (max-width: 576px){
+  .headline { font-size: 1.5rem; }
+  .para     { font-size: 0.9rem; }
+}
+
+/* Font-size utilities (optional) */
+.fs-1 { font-size: 3rem; }      /* ~48px */
+.fs-2 { font-size: 2.25rem; }   /* ~36px */
+.fs-3 { font-size: 1.75rem; }   /* ~28px */
+.fs-4 { font-size: 1.5rem; }    /* ~24px */
+.fs-5 { font-size: 1.125rem; }  /* ~18px */
+.fs-6 { font-size: 1rem; }      /* ~16px */
+
+/* Example responsive utility overrides */
+@media (max-width: 576px){
+  .fs-md-2 { font-size: 2rem; }       /* ~32px on mobile */
+  .fs-md-5 { font-size: 1.125rem; }   /* ~18px on mobile */
+}
+@media (min-width: 992px){
+  .fs-lg-3 { font-size: 1.75rem; }    /* ~28px on large screens */
+}
+
+/* ========= Base / Desktop (>= 992px) ========= */
+:root{
+  --fs-body: 18px;
+  --lh-body: 1.7;
+
+  --fs-h1: 48px; --lh-h1: 1.2;
+  --fs-h2: 40px; --lh-h2: 1.25;
+  --fs-h3: 32px; --lh-h3: 1.3;
+  --fs-h4: 24px; --lh-h4: 1.35;
+  --fs-h5: 20px; --lh-h5: 1.4;
+  --fs-h6: 18px; --lh-h6: 1.45;
+
+  --fs-p: 18px;   --lh-p: 1.75;
+  --fs-small: 14px;
+
+  --fs-btn: 16px;   /* Desktop button text */
+  --btn-minh: 44px; /* Touch-friendly height */
+  --btn-pad: 0.6rem 1.2rem;
+
+  --fs-card-title: 20px;
+  --fs-card-subtitle: 16px;
+  --fs-card-text: 16px;
+
+  --section-pad: 56px;   /* section vertical spacing */
+  --gap: 1rem;           /* grid gap */
+}
+
+/* base text composed using CSS variables */
+body{
+  font: 400 var(--fs-body)/var(--lh-body) system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color:#212529;
+}
+section{ padding-block: var(--section-pad); }
+/* img already responsive above */
+
+h1{ font-size: var(--fs-h1); line-height: var(--lh-h1); margin:0 0 .5em; }
+h2{ font-size: var(--fs-h2); line-height: var(--lh-h2); margin:0 0 .6em; }
+h3{ font-size: var(--fs-h3); line-height: var(--lh-h3); margin:0 0 .6em; }
+h4{ font-size: var(--fs-h4); line-height: var(--lh-h4); margin:0 0 .7em; }
+h5{ font-size: var(--fs-h5); line-height: var(--lh-h5); margin:0 0 .7em; }
+h6{ font-size: var(--fs-h6); line-height: var(--lh-h6); margin:0 0 .8em; }
+p { font-size: var(--fs-p);  line-height: var(--lh-p);  margin:0 0 1em; }
+small{ font-size: var(--fs-small); }
+
+.btn, .button, button{
+  font-size: var(--fs-btn);
+  line-height: 1.2;
+  min-height: var(--btn-minh);
+  padding: var(--btn-pad);
+}
+
+.card .card-title{ font-size: var(--fs-card-title); line-height: 1.35; margin-bottom:.4rem; }
+.card .card-subtitle{ font-size: var(--fs-card-subtitle); opacity:.8; margin-bottom:.5rem; }
+.card .card-text, .card p{ font-size: var(--fs-card-text); line-height: 1.7; }
+
+/* Common grid helper (optional) */
+.grid{ display:grid; gap: var(--gap); grid-template-columns: 1fr; }
+
+/* ========= Tablet (>=768px and <992px) ========= */
+@media (max-width: 991.98px){
+  :root{
+    --fs-body: 17px;
+    --fs-h1: 36px; --lh-h1: 1.2;
+    --fs-h2: 30px; --lh-h2: 1.25;
+    --fs-h3: 24px; --lh-h3: 1.3;
+    --fs-h4: 20px; --lh-h4: 1.35;
+    --fs-h5: 18px; --lh-h5: 1.4;
+    --fs-h6: 17px; --lh-h6: 1.45;
+
+    --fs-p: 16px;
+    --fs-small: 13px;
+
+    --fs-btn: 15px;          /* tablet button text */
+    --btn-minh: 42px;        /* slightly smaller height */
+    --btn-pad: 0.5rem 1rem;  /* tighter padding */
+
+    --fs-card-title: 18px;
+    --fs-card-subtitle: 15px;
+    --fs-card-text: 15px;
+
+    --section-pad: 48px;
+  }
+
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ========= Mobile (<768px) ========= */
+@media (max-width: 767.98px){
+  :root{
+    --fs-body: 16px;
+    --fs-h1: 28px; --lh-h1: 1.22;
+    --fs-h2: 24px; --lh-h2: 1.26;
+    --fs-h3: 20px; --lh-h3: 1.3;
+    --fs-h4: 18px; --lh-h4: 1.35;
+    --fs-h5: 16px; --lh-h5: 1.4;
+    --fs-h6: 15px; --lh-h6: 1.45;
+
+    --fs-p: 14.5px;
+    --fs-small: 12.5px;
+
+    --fs-btn: 14px;             /* mobile M */
+    --btn-minh: 40px;           /* reduce height */
+    --btn-pad: 0.45rem 0.9rem;  /* tighter padding */
+
+    --fs-card-title: 17px;
+    --fs-card-subtitle: 14px;
+    --fs-card-text: 14.5px;
+
+    --section-pad: 40px;
+    --gap: .9rem;
+  }
+
+  /* মোবাইলে টেক্সট সেন্টার দরকার হলে এই utility লাগাতে পারেন */
+  .text-center-sm{ text-align:center; }
+  /* মোবাইলে কার্ড/বাটনকে মাঝামাঝি রাখা */
+  .center-sm{ display:flex; justify-content:center; align-items:center; }
+}
+
+/* Mobile S: further tighten buttons */
+@media (max-width: 576px){
+  :root{
+    --fs-btn: 13.5px;
+    --btn-minh: 38px;
+    --btn-pad: 0.4rem 0.8rem;
+  }
+}
+
+/* Mobile XS: extra small phones */
+@media (max-width: 360px){
+  :root{
+    --fs-btn: 13px;
+    --btn-minh: 36px;
+    --btn-pad: 0.35rem 0.7rem;
+  }
+}
+
+/* Large tablet (portrait/landscape 993–1024px): 2-up + 1 centered */
+@media (max-width: 1024px) and (min-width: 993px){
+  .gellary{ grid-template-columns: repeat(2,1fr); }
+  .gellary .card:nth-child(3){
+    grid-column: 1 / -1;
+    place-self: center;
+    width: calc(50% - 12px);
+  }
+}
+
+/* ========= Optional: Navbar sticky & spacing ========= */
+header.sticky-top{ top:0; z-index:1000; }
+.nav-link{ transition: color .2s, opacity .2s; }
+.nav-link:hover{ color:#0d6efd; opacity:.85; }
+
+/* ========= Optional: Button hover variants (একই রং, ভিন্ন effect) ========= */
+.btn-variant-1:hover{ transform: translateY(-2px) scale(1.03); box-shadow: 0 10px 25px rgba(0,0,0,.08); }
+.btn-variant-2{ border-radius:.5rem; }
+.btn-variant-2:hover{ border-radius:2rem; box-shadow: 0 0 0 .25rem rgba(13,110,253,.15); }
+.btn-variant-3{ position:relative; overflow:hidden; }
+.btn-variant-3::after{
+  content:""; position:absolute; inset:0; background: rgba(255,255,255,.15);
+  clip-path: polygon(0 0,0 0,0 100%,0 100%); transition: clip-path .3s ease;
+}
+.btn-variant-3:hover::after{
+  clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+}
+
+/* ========= Cards: same hover effect everywhere ========= */
+.card-hover{ transition: transform .25s, box-shadow .25s; }
+.card-hover:hover{ transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.08); }
+
+/* Gallery buttons: unify style within section across devices */
+.gellary{
+  --fs-btn: 13px;
+  --btn-minh: 36px;
+  --btn-pad: 0.35rem 0.7rem;
+}
+.gellary .card .btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all .2s ease;
+  background: #008aff;
+  color: #fff;
+  border: none;
+  font-size: var(--fs-btn);
+  line-height: 1.2;
+  min-height: var(--btn-minh);
+  padding: var(--btn-pad);
+  margin-top: 8px;
+}
+
+/* Desktop/Laptop: add left margin to three gallery buttons */
+@media (min-width: 992px){
+  .gellary .card .btn--ghost,
+  .gellary .card .btn--lift,
+  .gellary .card .btn--gradient{
+    margin-left: 16px;
+  }
 }
